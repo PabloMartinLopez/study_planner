@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:study_planner/screens/home_screen.dart';
 import 'package:study_planner/screens/login_screen.dart';
+import 'package:study_planner/screens/newsubject_screen.dart';
 import 'package:study_planner/services/AuthService.dart';
 import 'firebase_options.dart';
 import 'util.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginScreen(),
         '/home': (context) => const HomeScreen(),
+        '/newSubject': (context)=>const NewsubjectScreen(),
       },
     );
   }

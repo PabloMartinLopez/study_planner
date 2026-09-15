@@ -15,6 +15,10 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.of(context).pushNamedAndRemoveUntil('/login', (route) => false);
   }
 
+  Future<void> _handleNewSubject() async {
+    Navigator.of(context).pushNamed('/newSubject', arguments: null);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +27,19 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             const Text('Home Screen'),
-            ElevatedButton(onPressed: () {
-              _handleLogout();
-            }, child: Text("Salir")),
+            ElevatedButton(
+              onPressed: () {
+                _handleNewSubject();
+              },
+              child: Text("Nueva asignatura"),
+            ),
+            // Text(context.read<Authservice>().currentUser!.uid),
+            ElevatedButton(
+              onPressed: () {
+                _handleLogout();
+              },
+              child: Text("Salir"),
+            ),
           ],
         ),
       ),
